@@ -1,0 +1,152 @@
+/* Body */
+
+body {
+	display: flex;
+	height: 100vh;
+	overflow: hidden;
+	flex-direction: column;
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	color: #444;
+}
+
+#portfolio-body {
+	height: 100%;
+}
+
+/* Navbar */
+
+.logo {
+	padding: 0 !important;
+	height: 128px;
+	position: relative;
+}
+
+#home-button-container-container {
+	width: 100%;
+	height: 100%;
+}
+
+#home-button-container {
+	display: block;
+	margin: 0 auto;
+}
+
+#home-button {
+	font-size: 1.7rem;
+}
+
+#home-button:hover, #portfolio-button:hover, #education-button:hover, #skills-button:hover {
+	cursor: pointer;
+}
+
+#header {
+	height: 128px;
+	padding-left: 240px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	font-size: 1.7rem;
+}
+
+#header-title {
+	padding: 50px;
+}
+
+/* Views - General */
+
+#portfolio-body {
+	padding-left: 240px;
+	padding-top: 128px;
+	padding-bottom: 50px;
+}
+
+#home-view, #portfolio-view, #education-view, #skills-view {
+	height: 100%;
+	width: 100%;
+	padding: 50px;
+	position: relative;
+	display: none;
+}
+
+.subheading {
+	font-size: 20px;
+}
+
+.content {
+	margin-left: 20px;
+}
+
+/* Home View */
+
+
+/* Portfolio View */
+
+.portfolio-container {
+	width: 90%;
+	height: 80%;
+	margin: 20px auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+.portfolio-item {
+	border-radius: 3px;
+	min-width: 400px;
+	min-height: 200px;
+	width: 27%;
+	height: 44%;
+	margin: 2%;
+	position: relative;
+	float: left;
+
+	background-color: #cfd8dc;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.portfolio-item-image {
+	height: 80%;
+}
+
+.portfolio-item-image img {
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	width: 100%;
+	height: 100%;
+}
+
+.portfolio-item-title {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 5%;
+	min-height: 20px;
+	height: 7%;
+}
+
+.portfolio-item-title-text {
+	float: left;
+}
+
+.portfolio-item-title-icons {
+	float: right;
+}
+
+.portfolio-item-title-icons i {
+	color: #444;
+	margin-left: 15px;
+}
+
+/* Utility */
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
