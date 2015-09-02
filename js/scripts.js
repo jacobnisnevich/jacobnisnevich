@@ -1,24 +1,32 @@
 $(document).ready(function() {
-    var currentView = "home-view"
-    $("#" + currentView).show();
+    $(".button-collapse").sideNav();
 
-    $("#home-button, #portfolio-button, #education-button, #skills-button").click(function() {
+    var currentView = "portfolio-view"
+    $("#" + currentView).show();
+    $("#header-title").text(viewTitles[currentView]);
+
+    $("#portfolio-button, #education-button, #skills-button, #about-button").click(function() {
         hideViews();
         currentView = $(this).attr("id").split("-")[0] + "-view";
         $("#" + currentView).show();
         $("#header-title").text(viewTitles[currentView]);
+        $(".button-collapse").sideNav("hide");
+    });
+
+    $("#home-button").click(function() {
+        $("#portfolio-button").click();
     });
 });
 
 function hideViews() {
-    ["home-view", "portfolio-view", "education-view", "skills-view"].forEach(function(view) {
+    ["portfolio-view", "education-view", "skills-view", "about-view"].forEach(function(view) {
         $("#" + view).hide();
     });
 }
 
 var viewTitles = {
-    "home-view": "About Me", 
     "portfolio-view": "Portfolio",
     "education-view": "Education and Work Experience", 
-    "skills-view": "Technical Skills and Expertise"
+    "skills-view": "Technical Skills and Expertise",
+    "about-view": "About Me"
 }

@@ -24,36 +24,30 @@
 </head>
 <body class="grey lighten-3 grey-text text-darken-2">
 	<!-- Navbar -->
-	<ul id="slide-out" class="side-nav fixed">
-		<li class="logo grey">
-			<div id="home-button-container-container" class="valign-wrapper">
-				<div id="home-button-container" class="valign">
-					<a id="home-button" class="thin grey-text text-lighten-3">Jacob Nisnevich</a>
+	<nav>
+		<ul id="slide-out" class="side-nav fixed">
+			<li class="logo grey">
+				<div id="home-button-container-container" class="valign-wrapper">
+					<div id="home-button-container" class="valign">
+						<a id="home-button" class="thin grey-text text-lighten-3">Jacob Nisnevich</a>
+					</div>
 				</div>
-			</div>
-		</li>
-		<li><a id="portfolio-button">Portfolio</a></li>
-		<li><a id="education-button">Education and Work</a></li>
-		<li><a id="skills-button">Technical Skills</a></li>
-	</ul>
-
-	<div id="header" class="grey lighten-1 valign-wrapper">
-		<div id="header-title" class="valign">About Me</div>
-	</div>
+			</li>
+			<li><a id="portfolio-button">Portfolio</a></li>
+			<li><a id="education-button">Education and Work</a></li>
+			<li><a id="skills-button">Technical Skills</a></li>
+			<li><a id="about-button">About and Contact</a></li>
+		</ul>
+		<div id="header" class="grey lighten-1 valign-wrapper">
+	    	<a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu grey-text text-darken-2"></i></a>
+			<div id="header-title" class="valign">About Me</div>
+		</div>
+	</nav>
 
 	<!-- Body -->
-	<div id="portfolio-body">
-		<!-- Home View -->
-		<div id="home-view">
-			<div class="subheading">A Little About Me...</div>
-			<div class="content">
-				<p>I am currently a student in my 3rd year studying Computer Science at UCLA.</p>
-			</div>
-			<div class="subheading">Contact Info</div>
-			<div class="content">
-				<p>Email: <a href="mailto:jnisnevich@ucla.edu">jnisnevich@ucla.edu</a></p>
-			</div>
-		</div>
+	<div id="view-body">
+
+		<!-- Portfolio View -->
 		<div id="portfolio-view">
 			<div class="portfolio-container clearfix">
 				<div class="portfolio-item">
@@ -131,11 +125,27 @@
 				</div>
 			</div>         
 		</div>
+
+		<!-- Education and Work Experience View -->
 		<div id="education-view">
 			
 		</div>
+
+		<!-- Technical Skills View -->
 		<div id="skills-view">
 			
+		</div>
+
+		<!-- About View -->
+		<div id="about-view">
+			<div class="subheading">A Little About Me...</div>
+			<div class="content">
+				<p>I am currently a student in my 3rd year studying Computer Science at UCLA.</p>
+			</div>
+			<div class="subheading">Contact Info</div>
+			<div class="content">
+				<p>Email: <a href="mailto:jnisnevich@ucla.edu">jnisnevich@ucla.edu</a></p>
+			</div>
 		</div>
 	</div>
 </body>

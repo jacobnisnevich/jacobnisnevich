@@ -3,7 +3,6 @@
 body {
 	display: flex;
 	height: 100vh;
-	overflow: hidden;
 	flex-direction: column;
 	margin: 0;
 	font-family: "Roboto", sans-serif;
@@ -36,7 +35,7 @@ body {
 	font-size: 1.7rem;
 }
 
-#home-button:hover, #portfolio-button:hover, #education-button:hover, #skills-button:hover {
+#home-button:hover, #portfolio-button:hover, #education-button:hover, #skills-button:hover, #about-button:hover {
 	cursor: pointer;
 }
 
@@ -52,17 +51,43 @@ body {
 
 #header-title {
 	padding: 50px;
+	color: #444;
 }
 
 /* Views - General */
 
-#portfolio-body {
-	padding-left: 240px;
-	padding-top: 128px;
-	padding-bottom: 50px;
+@media screen and (max-width: 992px) {
+	#header {
+		height: 64px;
+		padding-left: 0px;
+	}
+
+	#view-body {
+		padding: 0px 0px 50px 0px !important;
+	}
+
+	.button-collapse {
+	    margin-left: 10px;
+	}
+
+	.button-collapse i {
+		font-size: 1.7rem !important;
+	}
+
+	.button-collapse i:hover {
+		cursor: pointer;
+	}
+
+	#portfolio-view {
+		padding-top: 0px !important;
+	}
 }
 
-#home-view, #portfolio-view, #education-view, #skills-view {
+#view-body {
+	padding: 128px 0px 50px 240px;
+}
+
+#portfolio-view, #education-view, #skills-view, #about-view {
 	height: 100%;
 	width: 100%;
 	padding: 50px;
@@ -94,10 +119,8 @@ body {
 
 .portfolio-item {
 	border-radius: 3px;
-	min-width: 400px;
-	min-height: 200px;
-	width: 27%;
-	height: 44%;
+	width: 400px;
+	height: 300px;
 	margin: 2%;
 	position: relative;
 	float: left;
