@@ -4,12 +4,16 @@ $(document).ready(function() {
     var currentView = "portfolio-view"
     $("#" + currentView).show();
     $("#header-title").text(viewTitles[currentView]);
+    $("#header-title-short").text(viewTitlesShort[currentView]);
 
     $("#portfolio-button, #education-button, #skills-button, #about-button").click(function() {
         hideViews();
+        
         currentView = $(this).attr("id").split("-")[0] + "-view";
         $("#" + currentView).show();
         $("#header-title").text(viewTitles[currentView]);
+        $("#header-title-short").text(viewTitlesShort[currentView]);
+
         $(".button-collapse").sideNav("hide");
     });
 
@@ -28,5 +32,12 @@ var viewTitles = {
     "portfolio-view": "Portfolio",
     "education-view": "Education and Work Experience", 
     "skills-view": "Technical Skills and Expertise",
+    "about-view": "About Me"
+}
+
+var viewTitlesShort = {
+    "portfolio-view": "Portfolio",
+    "education-view": "Education", 
+    "skills-view": "Technical Skills",
     "about-view": "About Me"
 }
