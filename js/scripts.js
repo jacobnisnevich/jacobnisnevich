@@ -1,18 +1,18 @@
 $(document).ready(function() {
     var currentView = "home-view"
-    $("#" + currentView).slideDown();
+    $("#" + currentView);
 
     $("#home-button, #portfolio-button, #education-button, #skills-button").click(function() {
         hideViews();
         currentView = $(this).attr("id").split("-")[0] + "-view";
-        $("#" + currentView).slideDown();
+        $("#" + currentView);
         $("#header-title").text(viewTitles[currentView]);
     });
 });
 
 function hideViews() {
     ["home-view", "portfolio-view", "education-view", "skills-view"].forEach(function(view) {
-        $("#" + view).slideUp();
+        $("#" + view);
     });
 }
 
