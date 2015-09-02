@@ -56,6 +56,17 @@ body {
 
 /* Views - General */
 
+@media screen and (max-width: 500px) { 
+	.portfolio-item {
+		width: 300px !important;
+		height: 225px !important;
+	}
+
+	.portfolio-item-title-text {
+		width: 50%;
+	}
+}
+
 @media screen and (max-width: 992px) {
 	#header {
 		height: 64px;
