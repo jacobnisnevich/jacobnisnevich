@@ -7,6 +7,7 @@
 
 	<!-- JQuery JS -->
 	<script src="js/jquery.js"></script>
+	<script type='text/javascript' src='js/jquery.tipsy.js'></script>
 
 	<!-- Materialize JS -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
@@ -14,11 +15,13 @@
 	<!-- Portfolio JS -->
 	<script src="js/scripts.js"></script>
 
+	<link rel="stylesheet" href="css/tipsy.css" type="text/css" />
+
 	<!-- Materialize CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-	<!-- OP Debt CSS -->
+	<!-- Portfolio CSS -->
 	<link rel="stylesheet" href="css/styles.css">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -54,76 +57,80 @@
 		<!-- Portfolio View -->
 		<div id="portfolio-view">
 			<div class="portfolio-container clearfix">
-				<div class="portfolio-item">
+				<div class="portfolio-item noselect">
 					<div class="portfolio-item-image">
 						<img src="img/bildr.png" />
+					</div>
+					<div class="portfolio-item-description">
+						<p>bildr is a HTML5 web application built with a Ruby and Sinatra back-end and a MaterializeCSS front-end. bildr was created to allow for easy and quick creation of item sets outside of the League of Legends client while providing more information than the client's item set builder, such as item efficiency statistics.</p>
+						<p>This application was made as a submission for the Riot Games API Challenge 2.0.</p>
 					</div>
 					<div class="portfolio-item-title">
 						<div class="portfolio-item-title-text">bildr.co</div>
 						<div class="portfolio-item-title-icons">
-							<a class="portfolio-item-description-button"><i class="material-icons">layers</i></a>
-							<a href="http://github.com/jacobnisnevich/item-set-builder"><i class="material-icons">code</i></a>
-							<a href="http://bildr.co"><i class="material-icons">launch</i></a>
+							<a class="portfolio-item-description-button" original-title="Toggle Description"><i class="material-icons">layers</i></a>
+							<a class="portfolio-item-code-button" original-title="View Code" href="http://github.com/jacobnisnevich/item-set-builder"><i class="material-icons">code</i></a>
+							<a class="portfolio-item-launch-button" original-title="Launch Application" href="http://bildr.co"><i class="material-icons">launch</i></a>
 						</div>
 					</div>
 				</div>
-				<div class="portfolio-item">
+				<div class="portfolio-item noselect">
 					<div class="portfolio-item-image">
 						<img src="img/nasa.png" />
 					</div>
 					<div class="portfolio-item-title">
 						<div class="portfolio-item-title-text">Amazing NASA Universe Simulator</div>
 						<div class="portfolio-item-title-icons">
-							<a href="http://github.com/jacobnisnevich/nasa"><i class="material-icons">code</i></a>
-							<a href="http://jacobnisnevich.github.io/nasa/"><i class="material-icons">launch</i></a>
+							<a class="portfolio-item-code-button" original-title="View Code" href="http://github.com/jacobnisnevich/nasa"><i class="material-icons">code</i></a>
+							<a class="portfolio-item-launch-button" original-title="Launch Application" href="http://jacobnisnevich.github.io/nasa/"><i class="material-icons">launch</i></a>
 						</div>
 					</div>
 				</div>
-				<div class="portfolio-item">
+				<div class="portfolio-item noselect">
 					<div class="portfolio-item-image">
 						<img src="img/splooshed.png" />
 					</div>
 					<div class="portfolio-item-title">
 						<div class="portfolio-item-title-text">Splooshed</div>
 						<div class="portfolio-item-title-icons">
-							<a href="http://github.com/alexnisnevich/splooshed"><i class="material-icons">code</i></a>
-							<a href="http://splooshed.com/"><i class="material-icons">launch</i></a>
+							<a class="portfolio-item-code-button" original-title="View Code" href="http://github.com/alexnisnevich/splooshed"><i class="material-icons">code</i></a>
+							<a class="portfolio-item-launch-button" original-title="Launch Application" href="http://splooshed.com/"><i class="material-icons">launch</i></a>
 						</div>
 					</div>
 				</div>
-				<div class="portfolio-item">
+				<div class="portfolio-item noselect">
 					<div class="portfolio-item-image">
 						<img src="img/league-roles.png" />
 					</div>
 					<div class="portfolio-item-title">
 						<div class="portfolio-item-title-text">League Roles</div>
 						<div class="portfolio-item-title-icons">
-							<a href="https://github.com/jacobnisnevich/league-roles"><i class="material-icons">code</i></a>
-							<a href="http://league-roles.herokuapp.com/"><i class="material-icons">launch</i></a>
+							<a class="portfolio-item-code-button" original-title="View Code" href="https://github.com/jacobnisnevich/league-roles"><i class="material-icons">code</i></a>
+							<a class="portfolio-item-launch-button" original-title="Launch Application" href="http://league-roles.herokuapp.com/"><i class="material-icons">launch</i></a>
 						</div>
 					</div>
 				</div>
-				<div class="portfolio-item">
+				<div class="portfolio-item noselect">
 					<div class="portfolio-item-image">
 						<img src="img/material-charts.png" />
 					</div>
 					<div class="portfolio-item-title">
 						<div class="portfolio-item-title-text">Material Charts</div>
 						<div class="portfolio-item-title-icons">
-							<a href="http://github.com/jacobnisnevich/material-charts"><i class="material-icons">code</i></a>
-							<a href="http://jacobnisnevich.github.io/material-charts/"><i class="material-icons">launch</i></a>
+							<a class="portfolio-item-code-button" original-title="View Code" href="http://github.com/jacobnisnevich/material-charts"><i class="material-icons">code</i></a>
+							<a class="portfolio-item-launch-button" original-title="Launch Application" href="http://jacobnisnevich.github.io/material-charts/"><i class="material-icons">launch</i></a>
 						</div>
 					</div>
 				</div>
-				<div class="portfolio-item">
+				<div class="portfolio-item noselect">
 					<div class="portfolio-item-image">
 						<img src="img/laser-game.png" />
 					</div>
 					<div class="portfolio-item-title">
 						<div class="portfolio-item-title-text">Laser Game <i>(Unfinished)</i></div>
 						<div class="portfolio-item-title-icons">
-							<a href="https://github.com/jacobnisnevich/laser-game"><i class="material-icons">code</i></a>
-							<a href="http://jacobnisnevich.github.io/laser-game/"><i class="material-icons">launch</i></a>
+							<a class="portfolio-item-code-button" original-title="View Code" href="https://github.com/jacobnisnevich/laser-game"><i class="material-icons">code</i></a>
+							<a class="portfolio-item-launch-button" original-title="Launch Application" href="http://jacobnisnevich.github.io/laser-game/"><i class="material-icons">launch</i></a>
 						</div>
 					</div>
 				</div>

@@ -1,14 +1,13 @@
 $(document).ready(function() {
-    $(".button-collapse").sideNav();
-
-    var currentView = "portfolio-view"
+    // View management
+    var currentView = "portfolio-view";
     $("#" + currentView).show();
     $("#header-title").text(viewTitles[currentView]);
     $("#header-title-short").text(viewTitlesShort[currentView]);
 
     $("#portfolio-button, #education-button, #skills-button, #about-button").click(function() {
         hideViews();
-        
+
         currentView = $(this).attr("id").split("-")[0] + "-view";
         $("#" + currentView).show();
         $("#header-title").text(viewTitles[currentView]);
@@ -19,6 +18,28 @@ $(document).ready(function() {
 
     $("#home-button").click(function() {
         $("#portfolio-button").click();
+    });
+
+    // Side nav initialization
+
+    $(".button-collapse").sideNav();
+
+    // Portfolio icon tooltips
+
+    $(".portfolio-item-description-button").tipsy({gravity: 'n', fade: true, offset: 7});
+    $(".portfolio-item-code-button").tipsy({gravity: 'n', fade: true, offset: 7});
+    $(".portfolio-item-launch-button").tipsy({gravity: 'n', fade: true, offset: 7});
+
+    // Portfolio toggles
+
+    $(".portfolio-item-description-button").click(function() {
+        var item = $(this).closest(".portfolio-item");
+        var description = item.find(".portfolio-item-description");
+        if (!description.is(":visible")) {
+            description.fadeIn();
+        } else {
+            description.fadeOut();
+        }
     });
 });
 

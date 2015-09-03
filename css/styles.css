@@ -168,7 +168,29 @@ body {
 }
 
 .portfolio-item-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
 	height: 80%;
+	height: 80%;
+}
+
+.portfolio-item-description {
+	background-color: #bdbdbd;
+	color: #333;
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 80%;
+	opacity: 0.95;
+	padding: 10px;
+}
+
+.portfolio-item-description p {
+	margin-top: 0;
 }
 
 .portfolio-item-image img {
@@ -199,6 +221,23 @@ body {
 .portfolio-item-title-icons i {
 	color: #444;
 	margin-left: 15px;
+
+	-webkit-transition: all 0.5s ease; /* Safari and Chrome */
+	-moz-transition: all 0.5s ease; /* Firefox */
+	-ms-transition: all 0.5s ease; /* IE 9 */
+	-o-transition: all 0.5s ease; /* Opera */
+	transition: all 0.5s ease;
+}
+
+.portfolio-item-title-icons i:hover {
+	text-shadow: 2px 2px 10px;
+	cursor: pointer;
+
+	-webkit-transition: all 0.5s ease; /* Safari and Chrome */
+	-moz-transition: all 0.5s ease; /* Firefox */
+	-ms-transition: all 0.5s ease; /* IE 9 */
+	-o-transition: all 0.5s ease; /* Opera */
+	transition: all 0.5s ease;
 }
 
 /* Utility */
@@ -210,4 +249,13 @@ body {
 	content: " ";
 	clear: both;
 	height: 0;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
