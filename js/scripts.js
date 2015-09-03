@@ -1,7 +1,7 @@
 $(document).ready(function() {
     // View management
     var currentView = "portfolio-view";
-    $("#" + currentView).show();
+    $("#" + currentView).fadeIn();
     $("#header-title").text(viewTitles[currentView]);
     $("#header-title-short").text(viewTitlesShort[currentView]);
 
@@ -9,7 +9,7 @@ $(document).ready(function() {
         hideViews();
 
         currentView = $(this).attr("id").split("-")[0] + "-view";
-        $("#" + currentView).show();
+        $("#" + currentView).fadeIn();
         $("#header-title").text(viewTitles[currentView]);
         $("#header-title-short").text(viewTitlesShort[currentView]);
 
@@ -41,11 +41,17 @@ $(document).ready(function() {
             description.fadeOut();
         }
     });
+
+    $(".portfolio-item-image").click(function() {
+        var item = $(this).closest(".portfolio-item");
+        var launchButton = item.find(".portfolio-item-launch-button")[0];
+        launchButton.click();
+    });
 });
 
 function hideViews() {
     ["portfolio-view", "education-view", "skills-view", "about-view"].forEach(function(view) {
-        $("#" + view).hide();
+        $("#" + view).fadeOut();
     });
 }
 
