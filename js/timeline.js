@@ -18,7 +18,7 @@ var Timeline = function(startYear, endYear, data, id) {
 			"padding": "10px",
 			"border-radius": "3px",
 			"box-shadow": "0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19)",
-			"z-index": "10"
+			"z-index": "2000"
 		});
 
 		$("<div class='"+ timelineElementId + "-hover-text'></div>").appendTo($(timelineElement + " ." + timelineElementId + "-hover"));
@@ -92,7 +92,9 @@ var Timeline = function(startYear, endYear, data, id) {
 			var dataEndPosition = (tempDate.getFullYear() - startYear) * 900 + tempDate.getMonth() * 75 + 70;
 			var dataWidth = dataEndPosition - dataStartPosition;
 
-			$("<div id='" + timelineYearsElementId + "-data-" + index + "'></div>").appendTo($(timelineYearsElement + "-data")).css({
+			var currentElement = timelineYearsElementId + "-data-" + index;
+
+			$("<div id='" + currentElement + "'></div>").appendTo($(timelineYearsElement + "-data")).css({
 				"position": "absolute",
 				"left": dataStartPosition,
 				"top": "92px",
@@ -100,6 +102,14 @@ var Timeline = function(startYear, endYear, data, id) {
 				"width": dataWidth,
 				"height": "20px"
 			}).addClass("grey z-depth-2 " + timelineYearsElementId + "-datapoint").attr("data-hover", "<p><b>" + dataElement.institution + "</b></p><p>" + dataElement.degree + "</p><p>" + dataElement.year + ", " + dataElement.period + "</p><p>" + dataElement.periodStart + " &mdash; " + dataElement.periodEnd + "</p>");
+
+			$("#" + currentElement).attr("data-hover", $("#" + currentElement).attr("data-hover") + "<hr><ul>");
+
+			dataElement.courses.forEach(function(course) {
+				$("#" + currentElement).attr("data-hover", $("#" + currentElement).attr("data-hover") + "<li>" + course + "</li>");
+			});
+
+			$("#" + currentElement).attr("data-hover", $("#" + currentElement).attr("data-hover") + "</ul>");
 		})
 	}
 }

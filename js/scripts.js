@@ -65,14 +65,14 @@ $(document).ready(function() {
     window.setInterval(function () {
         if (hovered) {
             $(document).on("mousemove", function(event){
-                $("#timeline-large-education .timeline-large-education-hover").css({top: event.clientY - 200, left: event.clientX + 15});
+                $("#timeline-large-education .timeline-large-education-hover").css({top: event.clientY - 0, left: event.clientX + 25});
             });
         }
     }, 250);
 
     $("#timeline-large-education .timeline-large-education-years-datapoint").hover(function() {
         $("#timeline-large-education .timeline-large-education-hover-text").html($(this).data("hover"));
-        $("#timeline-large-education .timeline-large-education-hover").css({top: event.clientY - 200, left: event.clientX + 15}).fadeIn("fast");
+        $("#timeline-large-education .timeline-large-education-hover").css({top: event.clientY - 0, left: event.clientX + 25}).fadeIn("fast");
         $(this).addClass("z-depth-3");
         hovered = true;
     }, function() {
