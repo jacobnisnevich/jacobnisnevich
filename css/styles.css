@@ -130,7 +130,10 @@ body {
 	width: 100%;
 	padding: 50px;
 	position: relative;
-	display: none;
+}
+
+#portfolio-view {
+	display: block;
 }
 
 .subheading {
