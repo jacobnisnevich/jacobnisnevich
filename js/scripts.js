@@ -1,10 +1,11 @@
 $(document).ready(function() {
-    // View management
-    var currentView = "education-view";
+    // Default view
+    var currentView = "portfolio-view";
     $("#" + currentView).fadeIn();
     $("#header-title").text(viewTitles[currentView]);
     $("#header-title-short").text(viewTitlesShort[currentView]);
 
+    // View management
     $("#portfolio-button, #education-button, #skills-button, #about-button").click(function() {
         hideViews();
 
