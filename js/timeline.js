@@ -1,4 +1,5 @@
-var Timeline = function(startYear, endYear, data, id) {
+var Timeline = function(startYear, endYear, data, id, type) {
+	var type = type;
 	var startYear = startYear;
 	var endYear = endYear;
 	var data = data;
@@ -18,6 +19,7 @@ var Timeline = function(startYear, endYear, data, id) {
 			"padding": "10px",
 			"border-radius": "3px",
 			"box-shadow": "0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19)",
+			"max-width": "500px",
 			"z-index": "2000"
 		});
 
@@ -101,15 +103,30 @@ var Timeline = function(startYear, endYear, data, id) {
 				"border-radius": "5px",
 				"width": dataWidth,
 				"height": "20px"
-			}).addClass("grey z-depth-2 " + timelineYearsElementId + "-datapoint").attr("data-hover", "<p><b>" + dataElement.institution + "</b></p><p>" + dataElement.degree + "</p><p>" + dataElement.year + ", " + dataElement.period + "</p><p>" + dataElement.periodStart + " &mdash; " + dataElement.periodEnd + "</p>");
+			}).addClass("grey z-depth-2 " + timelineYearsElementId + "-datapoint");
 
-			$("#" + currentElement).attr("data-hover", $("#" + currentElement).attr("data-hover") + "<hr><ul>");
+			if (type == "education") {
+				// Education period summary
+				$("#" + currentElement).attr("data-hover", "<p><b>" + dataElement.institution + "</b></p><p>" + dataElement.periodStart + " &mdash; " + dataElement.periodEnd + "</p><p>" + dataElement.degree + "</p><p>" + dataElement.year + ", " + dataElement.period + "</p>");
 
-			dataElement.courses.forEach(function(course) {
-				$("#" + currentElement).attr("data-hover", $("#" + currentElement).attr("data-hover") + "<li>" + course + "</li>");
-			});
+				// Course list
+				$("#" + currentElement).attr("data-hover", $("#" + currentElement).attr("data-hover") + "<hr><ul>");
+				dataElement.courses.forEach(function(course) {
+					$("#" + currentElement).attr("data-hover", $("#" + currentElement).attr("data-hover") + "<li>" + course + "</li>");
+				});
+				$("#" + currentElement).attr("data-hover", $("#" + currentElement).attr("data-hover") + "</ul>");
+			} else if (type == "work") {
+				// Work period summary
+				$("#" + currentElement).attr("data-hover", "<p><b>" + dataElement.company + " &mdash; " + dataElement.location + "</b></p><p>" + dataElement.title + "</p><p>" + dataElement.periodStart + " &mdash; " + dataElement.periodEnd + "</p>");
 
-			$("#" + currentElement).attr("data-hover", $("#" + currentElement).attr("data-hover") + "</ul>");
+				// Duties list
+				$("#" + currentElement).attr("data-hover", $("#" + currentElement).attr("data-hover") + "<hr><ul>");
+				dataElement.duties.forEach(function(duty) {
+					$("#" + currentElement).attr("data-hover", $("#" + currentElement).attr("data-hover") + "<li>" + duty + "</li>");
+				});
+				$("#" + currentElement).attr("data-hover", $("#" + currentElement).attr("data-hover") + "</ul>");
+
+			}
 		})
 	}
 }

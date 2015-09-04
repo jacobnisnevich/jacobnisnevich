@@ -47,24 +47,25 @@ $(document).ready(function() {
         launchButton.click();
     });
 
-    // Education timeline
+    // Timeline initialization
     var tempDate = new Date(educationData[0].periodStart);
     var yearStart = tempDate.getFullYear();
     var tempDate = new Date(educationData[educationData.length - 1].periodEnd);
     var yearEnd = tempDate.getFullYear();
 
-    var educationTimeline = new Timeline(yearStart, yearEnd, educationData, "timeline-large-education");
+    var educationTimeline = new Timeline(yearStart, yearEnd, educationData, "timeline-large-education", "education");
     educationTimeline.initTimeline();
+    var workTimeline = new Timeline(yearStart, yearEnd, workData, "timeline-large-work", "work");
+    workTimeline.initTimeline();
 
     // Timeline scrolling
-    $("#timeline-large-education").kinetic({y: false});
-    // $("#timeline-work-education").kinetic({y: false});
+    $("#timeline-large").kinetic({y: false});
 
     // Education timeline hover events
-    var hovered = false;
+    var educationHovered = false;
 
     window.setInterval(function () {
-        if (hovered) {
+        if (educationHovered) {
             $(document).on("mousemove", function(event){
                 $("#timeline-large-education .timeline-large-education-hover").css({top: event.clientY - 0, left: event.clientX + 25});
             });
@@ -75,11 +76,33 @@ $(document).ready(function() {
         $("#timeline-large-education .timeline-large-education-hover-text").html($(this).data("hover"));
         $("#timeline-large-education .timeline-large-education-hover").css({top: event.clientY - 0, left: event.clientX + 25}).fadeIn("fast");
         $(this).addClass("z-depth-3");
-        hovered = true;
+        educationHovered = true;
     }, function() {
         $("#timeline-large-education .timeline-large-education-hover").fadeOut("fast");
         $(this).removeClass("z-depth-3");
-        hovered = false;
+        educationHovered = false;
+    });
+
+    // Work timeline hover events
+    var workHovered = false;
+
+    window.setInterval(function () {
+        if (workHovered) {
+            $(document).on("mousemove", function(event){
+                $("#timeline-large-work .timeline-large-work-hover").css({top: event.clientY - 325, left: event.clientX + 25});
+            });
+        }
+    }, 250);
+
+    $("#timeline-large-work .timeline-large-work-years-datapoint").hover(function() {
+        $("#timeline-large-work .timeline-large-work-hover-text").html($(this).data("hover"));
+        $("#timeline-large-work .timeline-large-work-hover").css({top: event.clientY - 325, left: event.clientX + 25}).fadeIn("fast");
+        $(this).addClass("z-depth-3");
+        workHovered = true;
+    }, function() {
+        $("#timeline-large-work .timeline-large-work-hover").fadeOut("fast");
+        $(this).removeClass("z-depth-3");
+        workHovered = false;
     });
 });
 
