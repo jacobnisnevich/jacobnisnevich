@@ -5,16 +5,24 @@
 	<title>Jacob Nisnevich &mdash; Portfolio</title>
 	<base target="_blank">
 
+	<!-- Fonts -->
+
 	<!-- JQuery JS -->
 	<script src="js/jquery.js"></script>
 	<script type='text/javascript' src='js/jquery.tipsy.js'></script>
+	<script type='text/javascript' src='js/jquery.kinetic.min.js'></script>
 
 	<!-- Materialize JS -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
 
+	<!-- Portfolio Data -->
+	<script src="data/education.js"></script>
+
 	<!-- Portfolio JS -->
+	<script src="js/timeline.js"></script>
 	<script src="js/scripts.js"></script>
 
+	<!-- Tooltip JS -->
 	<link rel="stylesheet" href="css/tipsy.css" type="text/css" />
 
 	<!-- Materialize CSS -->
@@ -169,7 +177,19 @@
 
 		<!-- Education and Work Experience View -->
 		<div id="education-view">
-			
+			<div id="timeline-large">
+				<div id="timeline-large-education-title" class="subheading">Education Timeline</div>
+				<div id="timeline-large-education">
+					<div id="timeline-large-education-line" class="z-depth-1"></div>
+				</div>
+				<div id="timeline-large-work">
+					<div id="timeline-large-work-line"></div>
+				</div>
+			</div>
+			<div id="timeline-small">
+			</div>
+			<div id="timeline-mobile">
+			</div>
 		</div>
 
 		<!-- Technical Skills View -->

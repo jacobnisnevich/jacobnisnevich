@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // View management
-    var currentView = "portfolio-view";
+    var currentView = "education-view";
     $("#" + currentView).fadeIn();
     $("#header-title").text(viewTitles[currentView]);
     $("#header-title-short").text(viewTitlesShort[currentView]);
@@ -21,17 +21,14 @@ $(document).ready(function() {
     });
 
     // Side nav initialization
-
     $(".button-collapse").sideNav();
 
     // Portfolio icon tooltips
-
     $(".portfolio-item-description-button").tipsy({gravity: 'n', fade: true, offset: 7});
     $(".portfolio-item-code-button").tipsy({gravity: 'n', fade: true, offset: 7});
     $(".portfolio-item-launch-button").tipsy({gravity: 'n', fade: true, offset: 7});
 
     // Portfolio toggles
-
     $(".portfolio-item-description-button").click(function() {
         var item = $(this).closest(".portfolio-item");
         var description = item.find(".portfolio-item-description");
@@ -42,10 +39,46 @@ $(document).ready(function() {
         }
     });
 
+    // Portfolio image links
     $(".portfolio-item-image").click(function() {
         var item = $(this).closest(".portfolio-item");
         var launchButton = item.find(".portfolio-item-launch-button")[0];
         launchButton.click();
+    });
+
+    // Education timeline
+    var tempDate = new Date(educationData[0].periodStart);
+    var yearStart = tempDate.getFullYear();
+    var tempDate = new Date(educationData[educationData.length - 1].periodEnd);
+    var yearEnd = tempDate.getFullYear();
+
+    var educationTimeline = new Timeline(yearStart, yearEnd, educationData, "timeline-large-education");
+    educationTimeline.initTimeline();
+
+    // Timeline scrolling
+    $("#timeline-large-education").kinetic({y: false});
+    // $("#timeline-work-education").kinetic({y: false});
+
+    // Education timeline hover events
+    var hovered = false;
+
+    window.setInterval(function () {
+        if (hovered) {
+            $(document).on("mousemove", function(event){
+                $("#timeline-large-education .timeline-large-education-hover").css({top: event.clientY - 200, left: event.clientX + 15});
+            });
+        }
+    }, 250);
+
+    $("#timeline-large-education .timeline-large-education-years-datapoint").hover(function() {
+        $("#timeline-large-education .timeline-large-education-hover-text").html($(this).data("hover"));
+        $("#timeline-large-education .timeline-large-education-hover").css({top: event.clientY - 200, left: event.clientX + 15}).fadeIn("fast");
+        $(this).addClass("z-depth-3");
+        hovered = true;
+    }, function() {
+        $("#timeline-large-education .timeline-large-education-hover").fadeOut("fast");
+        $(this).removeClass("z-depth-3");
+        hovered = false;
     });
 });
 
