@@ -121,6 +121,7 @@ $(document).ready(function() {
             "color": "grey"
         },
         "noY": true,
+        "noHover": true,
         "height": "240px",
         "width": "400px",
         "background": "#EEEEEE",
@@ -141,6 +142,7 @@ $(document).ready(function() {
             "color": "grey"
         },
         "noY": true,
+        "noHover": true,
         "height": "240px",
         "width": "400px",
         "background": "#EEEEEE",
@@ -148,7 +150,6 @@ $(document).ready(function() {
     };
 
     MaterialCharts.bar("#frontend-frameworks-chart", frontendFrameworks);
-    $("#frontend-frameworks-tooltip").tipsy({gravity: 'n', fade: true, offset: 7});
 
     var backendFrameworks = {
         "datasets": {
@@ -162,6 +163,7 @@ $(document).ready(function() {
             "color": "grey"
         },
         "noY": true,
+        "noHover": true,
         "height": "240px",
         "width": "400px",
         "background": "#EEEEEE",
@@ -181,6 +183,7 @@ $(document).ready(function() {
             "color": "grey"
         },
         "noY": true,
+        "noHover": true,
         "height": "240px",
         "width": "400px",
         "background": "#EEEEEE",

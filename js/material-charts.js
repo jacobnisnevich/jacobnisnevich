@@ -22,22 +22,24 @@ MaterialCharts.bar = function( element, data ) {
 		MaterialCharts.helpers.insertErrorMessage( element, validateResult.message );
 	}
 
-	window.setInterval(function () {
-		if (hovered) {
-			$(document).on("mousemove", function(event){
-				$(element + " .material-charts-hover").css({top: event.clientY - 40, left: event.clientX + 15});
-			});
-		}
-	}, 250);
+	if (!data.noHover) {
+		window.setInterval(function () {
+			if (hovered) {
+				$(document).on("mousemove", function(event){
+					$(element + " .material-charts-hover").css({top: event.clientY - 40, left: event.clientX + 15});
+				});
+			}
+		}, 250);
 
-	$(".material-charts-bar .material-charts-box-chart-vertical-bar").hover(function() {
-		$(element + " .material-charts-hover-text").text($(this).data("hover"));
-		$(element + " .material-charts-hover").css({top: event.clientY - 40, left: event.clientX + 15}).show();
-		hovered = true;
-	}, function() {
-		$(element + " .material-charts-hover").hide();
-		hovered = false;
-	});
+		$(".material-charts-bar .material-charts-box-chart-vertical-bar").hover(function() {
+			$(element + " .material-charts-hover-text").text($(this).data("hover"));
+			$(element + " .material-charts-hover").css({top: event.clientY - 40, left: event.clientX + 15}).show();
+			hovered = true;
+		}, function() {
+			$(element + " .material-charts-hover").hide();
+			hovered = false;
+		});
+	}
 };
 
 // Pie Charts
