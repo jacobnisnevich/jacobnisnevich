@@ -9,11 +9,14 @@
 
 	<!-- JQuery JS -->
 	<script src="js/jquery.js"></script>
-	<script type='text/javascript' src='js/jquery.tipsy.js'></script>
-	<script type='text/javascript' src='js/jquery.kinetic.min.js'></script>
+	<script src='js/jquery.tipsy.js'></script>
+	<script src='js/jquery.kinetic.min.js'></script>
 
 	<!-- Materialize JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+	<script src="js/materialize.min.js"></script>
+
+	<!-- Material Charts JS -->
+	<script src="js/material-charts.js"></script>
 
 	<!-- Portfolio Data -->
 	<script src="data/education.js"></script>
@@ -23,12 +26,15 @@
 	<script src="js/timeline.js"></script>
 	<script src="js/scripts.js"></script>
 
-	<!-- Tooltip JS -->
+	<!-- Tooltip CSS -->
 	<link rel="stylesheet" href="css/tipsy.css" type="text/css" />
 
 	<!-- Materialize CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+	<link rel="stylesheet" href="css/materialize.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- Material Charts CSS -->
+	<link rel="stylesheet" href="css/material-charts.css">
 
 	<!-- Portfolio CSS -->
 	<link rel="stylesheet" href="css/styles.css">
@@ -65,6 +71,7 @@
 
 		<!-- Portfolio View -->
 		<div id="portfolio-view">
+			<div class="portfolio-note subheading">For more see my GitHub profile at <span><a href="http://github.com/jacobnisnevich/">jacobnisnevich</a><img src="img/GitHub.png"/></span></div>
 			<div class="portfolio-container clearfix">
 				<div class="portfolio-item grey lighten-2 noselect">
 					<div class="portfolio-item-image">
@@ -194,7 +201,47 @@
 
 		<!-- Technical Skills View -->
 		<div id="skills-view">
-			
+			<div class="tech-skills-note subheading">All charts created with my <a href="http://jacobnisnevich.github.io/material-charts">Material Charts</a> library</div>
+			<div class="portfolio-container">
+				<div class="portfolio-item grey lighten-2">
+					<div class="portfolio-item-image">
+						<div id="programming-languages-chart"></div>
+					</div>
+					<div class="portfolio-item-title">
+						<div class="portfolio-item-title-text">Programming Langauges</div>
+					</div>
+				</div>
+				<div class="portfolio-item grey lighten-2">
+					<div class="portfolio-item-image">
+						<div id="frontend-frameworks-chart"></div>
+					</div>
+					<div class="portfolio-item-title">
+						<div class="portfolio-item-title-text">Front-end Frameworks</div>
+						<div class="portfolio-item-title-icons">
+							<a id="frontend-frameworks-tooltip" original-title="Expert with HTML, CSS, and JavaScript"><i class="material-icons">info</i></a>
+						</div>
+					</div>
+				</div>
+				<div class="portfolio-item grey lighten-2">
+					<div class="portfolio-item-image">
+						<div id="backend-frameworks-chart"></div>
+					</div>
+					<div class="portfolio-item-title">
+						<div class="portfolio-item-title-text">Back-end Frameworks</div>
+					</div>
+				</div>
+				<div class="portfolio-item grey lighten-2">
+					<div class="portfolio-item-image">
+						<div id="operating-systems-chart"></div>
+					</div>
+					<div class="portfolio-item-title">
+						<div class="portfolio-item-title-text">Operating Systems</div>
+						<div class="portfolio-item-title-icons">
+							<a id="operating-systems-tooltip" original-title="Linux Distros: Manjaro, Linux Mint, and Ubuntu"><i class="material-icons">info</i></a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<!-- About View -->
@@ -205,7 +252,25 @@
 			</div>
 			<div class="subheading">Contact Info</div>
 			<div class="content">
-				<p>Email: <a href="mailto:jnisnevich@ucla.edu">jnisnevich@ucla.edu</a></p>
+				<div class="row" style="margin-top: 10px">
+					<div class="col s3">
+						<div class="row">
+							<div class="col s4">Email:</div>
+							<div class="col s7"><a href="mailto:jnisnevich@ucla.edu">jnisnevich@ucla.edu</a></div>
+							<div class="col s1"><i style="color: black" class="material-icons">email</i></div>
+						</div>
+						<div class="row">
+							<div class="col s4">Facebook:</div>
+							<div class="col s7"><a href="http://facebook.com/jacobnisnevich">Jacob Nisnevich</a></div>
+							<div class="col s1"><img style="width: 24px" src="img/facebook.png" /></div>
+						</div>
+						<div class="row">
+							<div class="col s4">GitHub:</div>
+							<div class="col s7"><a href="http://github.com/jacobnisnevich">jacobnisnevich</a></div>
+							<div class="col s1"><img style="width: 24px" src="img/GitHub.png" /></div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
