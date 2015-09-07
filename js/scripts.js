@@ -163,6 +163,7 @@ $(document).ready(function() {
             "color": "grey"
         },
         "noY": true,
+        "noHover": true,
         "height": "240px",
         "width": "400px",
         "background": "#EEEEEE",
