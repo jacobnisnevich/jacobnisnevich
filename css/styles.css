@@ -150,6 +150,23 @@ body {
 
 /* Portfolio View */
 
+.portfolio-note {
+	position: absolute;
+	top: 25px;
+	font-size: 14px;
+}
+
+.portfolio-note span {
+	position: relative;
+}
+
+.portfolio-note img {
+	position: absolute;
+	top: -4px;
+	right: -32px;
+	width: 24px;
+}
+
 .portfolio-container {
 	width: 90%;
 	height: 80%;
@@ -191,7 +208,6 @@ body {
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 80%;
 	height: 80%;
 }
 
@@ -328,6 +344,14 @@ body {
 	height: 5px;
 	background-color: #444;
 	border-radius: 3px;
+}
+
+/* Technical Skills */
+
+.tech-skills-note {
+	position: absolute;
+	top: 25px;
+	font-size: 14px;
 }
 
 /* Utility */

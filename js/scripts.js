@@ -104,6 +104,91 @@ $(document).ready(function() {
         $(this).removeClass("z-depth-3");
         workHovered = false;
     });
+
+    // Technical Skills charts
+    var programmingLanguagesChartData = {
+        "datasets": {
+            "values": [100, 75, 60, 55, 40, 30, 25],
+            "labels": [
+                "C++", 
+                "C", 
+                "Ruby", 
+                "JavaScript",
+                "C#",
+                "Python",
+                "VBScript"
+            ],
+            "color": "grey"
+        },
+        "noY": true,
+        "height": "240px",
+        "width": "400px",
+        "background": "#EEEEEE",
+        "shadowDepth": "0"
+    };
+
+    MaterialCharts.bar("#programming-languages-chart", programmingLanguagesChartData)
+
+    var frontendFrameworks = {
+        "datasets": {
+            "values": [90, 75, 35, 15],
+            "labels": [
+                "jQuery",
+                "Materialize",
+                "Bootstrap",
+                "AngularJS"
+            ],
+            "color": "grey"
+        },
+        "noY": true,
+        "height": "240px",
+        "width": "400px",
+        "background": "#EEEEEE",
+        "shadowDepth": "0"
+    };
+
+    MaterialCharts.bar("#frontend-frameworks-chart", frontendFrameworks);
+    $("#frontend-frameworks-tooltip").tipsy({gravity: 'n', fade: true, offset: 7});
+
+    var backendFrameworks = {
+        "datasets": {
+            "values": [75, 55, 45, 40],
+            "labels": [
+                "Sinatra",
+                "Express",
+                "ASP.NET",
+                "ASP (Classic)"
+            ],
+            "color": "grey"
+        },
+        "noY": true,
+        "height": "240px",
+        "width": "400px",
+        "background": "#EEEEEE",
+        "shadowDepth": "0"
+    };
+
+    MaterialCharts.bar("#backend-frameworks-chart", backendFrameworks);
+
+    var operatingSystems = {
+        "datasets": {
+            "values": [95, 85, 10],
+            "labels": [
+                "Windows",
+                "Linux",
+                "Mac OS",
+            ],
+            "color": "grey"
+        },
+        "noY": true,
+        "height": "240px",
+        "width": "400px",
+        "background": "#EEEEEE",
+        "shadowDepth": "0"
+    };
+
+    MaterialCharts.bar("#operating-systems-chart", operatingSystems);
+    $("#operating-systems-tooltip").tipsy({gravity: 'n', fade: true, offset: 7});
 });
 
 function hideViews() {
